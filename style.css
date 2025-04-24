@@ -28,4 +28,21 @@ footer {
   position: fixed;
   width: 100%;
   bottom: 0;
+}.button-container {
+  margin-top: 20px;
+}
+
+.join-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #5865F2;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.join-button:hover {
+  background-color: #4752C4;
 }
