@@ -100,4 +100,21 @@ footer p {
 #trailer button:hover {
     background-color: #e65100;
     transform: scale(1.05);
+}/* Logo hover efekti */
+header img.logo {
+    transition: transform 0.3s ease;
+}
+
+header img.logo:hover {
+    transform: scale(1.05);
+}
+
+/* Sosyal medya linklerine hover efekti */
+footer a {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer a:hover {
+    color: #ff914d; /* İstersen burayı logo renginle de değiştirebiliriz */
+    transform: translateY(-3px);
 }
