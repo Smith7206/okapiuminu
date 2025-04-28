@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Okapium Inu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+
+    <header>
+        <div class="button-container">
+            <a href="https://discord.com/invite/example" class="join-button" target="_blank">Join the Community</a>
+        </div>
+        <div class="logo-container">
+            <img src="logo.png" alt="Okapium Inu Logo" class="logo-3d">
+        </div>
+        <h1>Welcome to Okapium Inu</h1>
+        <p>A playful, community-driven crypto project inspired by the spirit of the Okapi.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>About the Project</h2>
+            <p>Okapium Inu is a vibrant, fun ecosystem for crypto lovers. Join the movement!</p>
+        </section>
+    </main>
+
+    <section id="trailer" class="card">
+        <h2>Watch Our Trailer</h2>
+        <a href="https://www.youtube.com/watch?v=dummy" target="_blank">
+            <button class="watch-button">Watch Now</button>
+        </a>
+    </section>
+
+    <section id="roadmap" class="card">
+        <h2>Roadmap</h2>
+        <div class="roadmap-list">
+            <ul>
+                <li><strong>Phase 1:</strong> Website Launch, Community Building</li>
+                <li><strong>Phase 2:</strong> NFT Collection Launch</li>
+                <li><strong>Phase 3:</strong> Exchange Listings, Partnerships</li>
+                <li><strong>Phase 4:</strong> Global Marketing Campaign, Okapium Inu Game Reveal</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="about" class="card">
+        <h2>About Okapium Inu</h2>
+        <p>
+            Okapium Inu was born from a dream of bringing people together through fun, creativity, and innovation.
+            Our mission is to build a vibrant community where every voice matters, and to create a lasting impact in the world of memes, blockchain, and beyond.
+            Join us on this exciting journey and become a part of the Okapium spirit!
+        </p>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://twitter.com/" target="_blank">Twitter</a>
+            <a href="https://discord.com/" target="_blank">Discord</a>
+            <a href="https://t.me/" target="_blank">Telegram</a>
+        </div>
+        <p>© 2025 Okapium Inu. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const cards = document.querySelectorAll('.card');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+
+        cards.forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
