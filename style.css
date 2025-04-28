@@ -129,3 +129,33 @@ footer a:hover {
     border-radius: 10px;
     text-align: center;
 }
+.watch-button {
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: #ff6f00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.watch-button:hover {
+    background-color: #e65c00;
+}
+
+.roadmap-list {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.footer-links a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
