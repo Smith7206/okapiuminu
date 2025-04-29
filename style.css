@@ -1,0 +1,210 @@
+/* Genel stil */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(120deg, #0b0c2a, #1a1c3b);
+  color: white;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+canvas#stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+header {
+  text-align: center;
+  padding: 60px 20px 40px;
+}
+
+.logo-container {
+  margin-bottom: 20px;
+}
+
+.logo-3d {
+  width: 120px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+.button-container {
+  margin-top: 15px;
+}
+
+.join-button {
+  padding: 10px 20px;
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.join-button:hover {
+  background-color: #e65c00;
+}
+
+main {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 800px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h2 {
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.watch-button {
+  padding: 10px 20px;
+  background-color: #00bfff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.watch-button:hover {
+  background-color: #009acd;
+}
+
+.roadmap-list ul,
+.card ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.roadmap-list li {
+  margin-bottom: 10px;
+}
+
+.nft-images {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nft-images img {
+  width: 150px;
+  height: 150px;
+  border-radius: 8px;
+  border: 2px solid #fff;
+  transition: transform 0.3s;
+}
+
+.nft-images img:hover {
+  transform: scale(1.05);
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+form input[type="email"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  width: 250px;
+}
+
+form button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #00cc66;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+form button:hover {
+  background-color: #00994d;
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #333;
+  margin-top: 50px;
+}
+
+.footer-links {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  color: #aaa;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+/* Dil Seçici */
+.language-select {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.language-select select {
+  padding: 5px 10px;
+  background-color: #222;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 5px;
+}
