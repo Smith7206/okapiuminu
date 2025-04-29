@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Okapium Inu</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background"></div>
+
+  <div class="language-switcher">
+    <select id="languageSelect">
+      <option value="en">English</option>
+      <option value="tr">Türkçe</option>
+      <option value="ru">Русский</option>
+      <option value="zh">中文</option>
+      <option value="uk">Українська</option>
+      <option value="az">Azərbaycan</option>
+    </select>
+  </div>
+
+  <header>
+    <div class="button-container">
+      <a href="https://discord.com/invite/example" class="join-button" target="_blank" data-i18n="join">Join the Community</a>
+    </div>
+    <div class="logo-container">
+      <img src="logo.png" alt="Okapium Inu Logo" class="logo" />
+    </div>
+    <h1 data-i18n="welcome">Welcome to Okapium Inu</h1>
+    <p data-i18n="intro">A playful, community-driven crypto project inspired by the spirit of the Okapi.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2 data-i18n="about-title">About the Project</h2>
+      <p data-i18n="about-text">Okapium Inu is a vibrant, fun ecosystem for crypto lovers. Join the movement!</p>
+    </section>
+
+    <section class="card">
+      <h2 data-i18n="watch-title">Watch Our Trailer</h2>
+      <a href="https://www.youtube.com/watch?v=dummy" target="_blank">
+        <button class="watch-button" data-i18n="watch-button">Watch Now</button>
+      </a>
+    </section>
+
+    <section class="card">
+      <h2 data-i18n="roadmap-title">Roadmap</h2>
+      <ul>
+        <li data-i18n="phase1"><strong>Phase 1:</strong> Website Launch, Community Building</li>
+        <li data-i18n="phase2"><strong>Phase 2:</strong> NFT Collection Launch</li>
+        <li data-i18n="phase3"><strong>Phase 3:</strong> Exchange Listings, Partnerships</li>
+        <li data-i18n="phase4"><strong>Phase 4:</strong> Global Marketing Campaign, Okapium Inu Game Reveal</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2 data-i18n="about-title2">About Okapium Inu</h2>
+      <p data-i18n="about-full">Okapium Inu was born from a dream of bringing people together through fun, creativity, and innovation...</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://twitter.com/" target="_blank">Twitter</a>
+      <a href="https://discord.com/" target="_blank">Discord</a>
+      <a href="https://t.me/" target="_blank">Telegram</a>
+    </div>
+    <p>© 2025 Okapium Inu. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const translations = {/* senin sağladığın çeviri objesi buraya eklenebilir */};
+
+    function translatePage(lang) {
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (translations[lang][key]) {
+          el.innerText = translations[lang][key];
+        }
+      });
+    }
+
+    document.getElementById("languageSelect").addEventListener("change", (e) => {
+      translatePage(e.target.value);
+    });
+
+    window.addEventListener("DOMContentLoaded", () => {
+      translatePage("en");
+    });
+  </script>
+</body>
+</html>
