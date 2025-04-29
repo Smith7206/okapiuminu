@@ -1,0 +1,100 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 3D Stars Background */
+body, html {
+  height: 100%;
+  overflow-x: hidden;
+  font-family: 'Arial', sans-serif;
+  color: white;
+}
+
+.stars-background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  z-index: -1;
+  animation: moveBackground 20s linear infinite;
+}
+
+@keyframes moveBackground {
+  0% { background-position: 0 0; }
+  100% { background-position: 1000px 1000px; }
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.language-selector select {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+.community-link {
+  color: #00aaff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Main */
+main {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.logo {
+  width: 300px;
+  max-width: 90%;
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+/* 3D Button */
+.btn-3d {
+  background-color: #ff6600;
+  padding: 15px 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px #cc5200;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.btn-3d:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px #cc5200;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+
+.socials a {
+  margin: 0 10px;
+  color: orange;
+  text-decoration: none;
+}
