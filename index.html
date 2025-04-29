@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Okapium Inu</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="stars"></canvas>
+  <div class="background-animation"></div>
+  <div class="stars-background"></div>
+
+  <header>
+    <div class="language-select">
+      <select onchange="changeLanguage(this.value)">
+        <option value="en">English</option>
+        <option value="tr">Türkçe</option>
+      </select>
+    </div>
+    <div class="logo-container">
+      <img src="logo.png" alt="Okapium Inu Logo" class="logo-3d" />
+    </div>
+    <h1 data-en="Welcome to Okapium Inu" data-tr="Okapium Inu'ya Hoş Geldiniz">Welcome to Okapium Inu</h1>
+    <p data-en="A playful, community-driven crypto project inspired by the spirit of the Okapi." data-tr="Okapi ruhundan ilham alan, eğlenceli ve topluluk odaklı bir kripto projesi.">A playful, community-driven crypto project inspired by the spirit of the Okapi.</p>
+    <div class="button-container">
+      <a href="https://discord.com/invite/example" class="join-button" target="_blank">Join the Community</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="card" id="about">
+      <h2 data-en="About the Project" data-tr="Proje Hakkında">About the Project</h2>
+      <p data-en="Okapium Inu is a vibrant, fun ecosystem for crypto lovers. Join the movement!" data-tr="Okapium Inu, kripto meraklıları için canlı ve eğlenceli bir ekosistemdir. Hareketin bir parçası olun!">Okapium Inu is a vibrant, fun ecosystem for crypto lovers. Join the movement!</p>
+    </section>
+
+    <section class="card" id="trailer">
+      <h2 data-en="Watch Our Trailer" data-tr="Tanıtım Videomuz">Watch Our Trailer</h2>
+      <a href="https://www.youtube.com/watch?v=dummy" target="_blank">
+        <button class="watch-button">Watch Now</button>
+      </a>
+    </section>
+
+    <section class="card" id="roadmap">
+      <h2 data-en="Roadmap" data-tr="Yol Haritası">Roadmap</h2>
+      <ul class="roadmap-list">
+        <li><strong>Phase 1:</strong> Website Launch, Community Building</li>
+        <li><strong>Phase 2:</strong> NFT Collection Launch</li>
+        <li><strong>Phase 3:</strong> Exchange Listings, Partnerships</li>
+        <li><strong>Phase 4:</strong> Global Marketing Campaign, Okapium Inu Game Reveal</li>
+      </ul>
+    </section>
+
+    <section class="card" id="tokenomics">
+      <h2 data-en="Tokenomics" data-tr="Tokenomik">Tokenomics</h2>
+      <ul>
+        <li>Supply: 1,000,000,000 OKA</li>
+        <li>Liquidity: 50%</li>
+        <li>Community & Airdrop: 30%</li>
+        <li>Marketing & Development: 20%</li>
+      </ul>
+    </section>
+
+    <section class="card" id="nft-gallery">
+      <h2 data-en="NFT Gallery" data-tr="NFT Galerisi">NFT Gallery</h2>
+      <div class="nft-images">
+        <img src="https://via.placeholder.com/150" alt="NFT 1" />
+        <img src="https://via.placeholder.com/150" alt="NFT 2" />
+        <img src="https://via.placeholder.com/150" alt="NFT 3" />
+      </div>
+    </section>
+
+    <section class="card" id="newsletter">
+      <h2 data-en="Stay Updated" data-tr="Güncel Kalın">Stay Updated</h2>
+      <form>
+        <input type="email" placeholder="Enter your email" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://twitter.com/" target="_blank">Twitter</a>
+      <a href="https://discord.com/" target="_blank">Discord</a>
+      <a href="https://t.me/" target="_blank">Telegram</a>
+    </div>
+    <p>© 2025 Okapium Inu. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const cards = document.querySelectorAll('.card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+    cards.forEach(card => observer.observe(card));
+
+    const canvas = document.getElementById('stars');
+    const ctx = canvas.getContext('2d');
+    let stars = [];
+    function initStars() {
+      stars = [];
+      for (let i = 0; i < 200; i++) {
+        stars.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          z: Math.random() * canvas.width
+        });
+      }
+    }
+    function moveStars() {
+      ctx.fillStyle = 'black';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = 'white';
+      for (let i = 0; i < stars.length; i++) {
+        let star = stars[i];
+        star.z -= 1;
+        if (star.z <= 0) star.z = canvas.width;
+        let k = 128.0 / star.z;
+        let px = star.x * k + canvas.width / 2;
+        let py = star.y * k + canvas.height / 2;
+        if (px >= 0 && px <= canvas.width && py >= 0 && py <= canvas.height) {
+          let size = (1 - star.z / canvas.width) * 3;
+          ctx.beginPath();
+          ctx.arc(px, py, size, 0, 2 * Math.PI);
+          ctx.fill();
+        }
+      }
+      requestAnimationFrame(moveStars);
+    }
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      initStars();
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+    moveStars();
+
+    function changeLanguage(lang) {
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.innerText = el.getAttribute(`data-${lang}`);
+      });
+    }
+  </script>
+</body>
+</html>
