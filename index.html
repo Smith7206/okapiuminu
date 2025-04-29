@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Okapium Inu</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="stars"></div>
+  <header>
+    <select id="languageSwitcher">
+      <option value="en">English</option>
+      <option value="tr">Türkçe</option>
+      <option value="ru">Русский</option>
+      <option value="zh">中文</option>
+      <option value="uk">Українська</option>
+      <option value="az">Azərbaycan</option>
+    </select>
+  </header>
+
+  <main>
+    <img src="logo.png" alt="Okapium Inu Logo" class="logo" />
+    <h1 class="multilang" data-en="Welcome to Okapium Inu!" data-tr="Okapium Inu'ya Hoş Geldiniz!" data-ru="Добро пожаловать в Okapium Inu!" data-zh="欢迎来到 Okapium Inu！" data-uk="Ласкаво просимо до Okapium Inu!" data-az="Okapium Inu'ya xoş gəlmisiniz!">
+      Welcome to Okapium Inu!
+    </h1>
+    <p class="multilang" data-en="Fun, community, and future." data-tr="Eğlence, topluluk ve gelecek." data-ru="Веселье, сообщество и будущее." data-zh="乐趣、社区和未来。" data-uk="Розваги, спільнота і майбутнє." data-az="Əyləncə, icma və gələcək.">
+      Fun, community, and future.
+    </p>
+    <a href="#" class="btn3d multilang" data-en="Join the Community" data-tr="Topluluğa Katıl" data-ru="Присоединяйтесь к сообществу" data-zh="加入社区" data-uk="Приєднатися до спільноти" data-az="İcmaya qoşulun">
+      Join the Community
+    </a>
+  </main>
+
+  <footer>
+    <div class="socials">
+      <a href="#">Twitter</a>
+      <a href="#">Discord</a>
+      <a href="#">Telegram</a>
+    </div>
+    <p>&copy; 2025 Okapium Inu. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const switcher = document.getElementById('languageSwitcher');
+    const multilangEls = document.querySelectorAll('.multilang');
+
+    switcher.addEventListener('change', () => {
+      const lang = switcher.value;
+      multilangEls.forEach(el => {
+        const newText = el.getAttribute('data-' + lang);
+        if (newText) el.innerText = newText;
+      });
+    });
+  </script>
+</body>
+</html>
