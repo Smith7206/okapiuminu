@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Okapium Inu</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="stars"></canvas>
+  <div class="background-animation"></div>
+  <div class="stars-background"></div>
+
+  <!-- Dil Menüsü -->
+  <div class="language-switcher">
+    <select id="languageSelect">
+      <option value="en">English</option>
+      <option value="tr">Türkçe</option>
+      <option value="ru">Русский</option>
+      <option value="zh">中文</option>
+      <option value="uk">Українська</option>
+      <option value="az">Azərbaycan</option>
+    </select>
+  </div>
+
+  <header>
+    <div class="button-container">
+      <a href="https://discord.com/invite/example" class="join-button" target="_blank" data-i18n="join">Join the Community</a>
+    </div>
+    <div class="logo-container">
+      <img src="logo.png" alt="Okapium Inu Logo" class="logo-3d" />
+    </div>
+    <h1 data-i18n="welcome">Welcome to Okapium Inu</h1>
+    <p data-i18n="intro">A playful, community-driven crypto project inspired by the spirit of the Okapi.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2 data-i18n="about-title">About the Project</h2>
+      <p data-i18n="about-text">Okapium Inu is a vibrant, fun ecosystem for crypto lovers. Join the movement!</p>
+    </section>
+  </main>
+
+  <section id="trailer" class="card">
+    <h2 data-i18n="watch-title">Watch Our Trailer</h2>
+    <a href="https://www.youtube.com/watch?v=dummy" target="_blank">
+      <button class="watch-button" data-i18n="watch-button">Watch Now</button>
+    </a>
+  </section>
+
+  <section id="roadmap" class="card">
+    <h2 data-i18n="roadmap-title">Roadmap</h2>
+    <div class="roadmap-list">
+      <ul>
+        <li data-i18n="phase1"><strong>Phase 1:</strong> Website Launch, Community Building</li>
+        <li data-i18n="phase2"><strong>Phase 2:</strong> NFT Collection Launch</li>
+        <li data-i18n="phase3"><strong>Phase 3:</strong> Exchange Listings, Partnerships</li>
+        <li data-i18n="phase4"><strong>Phase 4:</strong> Global Marketing Campaign, Okapium Inu Game Reveal</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="about" class="card">
+    <h2 data-i18n="about-title2">About Okapium Inu</h2>
+    <p data-i18n="about-full">
+      Okapium Inu was born from a dream of bringing people together through fun, creativity, and innovation.
+      Our mission is to build a vibrant community where every voice matters, and to create a lasting impact in the world of memes, blockchain, and beyond.
+      Join us on this exciting journey and become a part of the Okapium spirit!
+    </p>
+  </section>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://twitter.com/" target="_blank">Twitter</a>
+      <a href="https://discord.com/" target="_blank">Discord</a>
+      <a href="https://t.me/" target="_blank">Telegram</a>
+    </div>
+    <p>© 2025 Okapium Inu. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        welcome: "Welcome to Okapium Inu",
+        intro: "A playful, community-driven crypto project inspired by the spirit of the Okapi.",
+        join: "Join the Community",
+        about-title: "About the Project",
+        about-text: "Okapium Inu is a vibrant, fun ecosystem for crypto lovers. Join the movement!",
+        watch-title: "Watch Our Trailer",
+        watch-button: "Watch Now",
+        roadmap-title: "Roadmap",
+        phase1: "Phase 1: Website Launch, Community Building",
+        phase2: "Phase 2: NFT Collection Launch",
+        phase3: "Phase 3: Exchange Listings, Partnerships",
+        phase4: "Phase 4: Global Marketing Campaign, Okapium Inu Game Reveal",
+        about-title2: "About Okapium Inu",
+        about-full: "Okapium Inu was born from a dream of bringing people together through fun, creativity, and innovation. Our mission is to build a vibrant community where every voice matters, and to create a lasting impact in the world of memes, blockchain, and beyond. Join us on this exciting journey and become a part of the Okapium spirit!"
+      },
+      tr: {
+        welcome: "Okapium Inu'ya Hoş Geldiniz",
+        intro: "Okapi ruhundan ilham alan, topluluk odaklı eğlenceli bir kripto projesi.",
+        join: "Topluluğa Katıl",
+        about-title: "Proje Hakkında",
+        about-text: "Okapium Inu, kripto severler için canlı ve eğlenceli bir ekosistemdir. Hareketin bir parçası olun!",
+        watch-title: "Tanıtım Videomuzu İzleyin",
+        watch-button: "Şimdi İzle",
+        roadmap-title: "Yol Haritası",
+        phase1: "Aşama 1: Web Sitesi Açılışı, Topluluk Oluşturma",
+        phase2: "Aşama 2: NFT Koleksiyonunun Lansmanı",
+        phase3: "Aşama 3: Borsa Listelemeleri, Ortaklıklar",
+        phase4: "Aşama 4: Küresel Pazarlama Kampanyası, Okapium Inu Oyunu Tanıtımı",
+        about-title2: "Okapium Inu Hakkında",
+        about-full: "Okapium Inu, insanları eğlence, yaratıcılık ve yenilikle bir araya getirme hayalinden doğdu. Amacımız, herkesin sesinin önemli olduğu canlı bir topluluk inşa etmek ve meme'ler, blok zinciri ve ötesinde kalıcı bir etki yaratmaktır. Bu heyecan verici yolculukta bize katılın!"
+      },
+      ru: {
+        welcome: "Добро пожаловать в Okapium Inu",
+        intro: "Весёлый крипто-проект, вдохновлённый духом Окапи.",
+        join: "Присоединиться к сообществу",
+        about-title: "О проекте",
+        about-text: "Okapium Inu — это живой и весёлый экосистемный проект для любителей криптовалют. Присоединяйтесь к движению!",
+        watch-title: "Смотрите наш трейлер",
+        watch-button: "Смотреть сейчас",
+        roadmap-title: "Дорожная карта",
+        phase1: "Этап 1: Запуск сайта, создание сообщества",
+        phase2: "Этап 2: Запуск коллекции NFT",
+        phase3: "Этап 3: Листинги и партнёрства",
+        phase4: "Этап 4: Глобальная маркетинговая кампания, анонс игры Okapium Inu",
+        about-title2: "О проекте Okapium Inu",
+        about-full: "Okapium Inu родился из мечты объединить людей через веселье, креативность и инновации. Наша миссия — создать живое сообщество, где важен каждый голос, и оставить след в мире мемов и блокчейна."
+      },
+      zh: {
+        welcome: "欢迎来到 Okapium Inu",
+        intro: "一个受灵感启发、以社区为驱动的加密项目。",
+        join: "加入社区",
+        about-title: "关于项目",
+        about-text: "Okapium Inu 是一个为加密爱好者而设的有趣生态系统。加入我们！",
+        watch-title: "观看我们的预告片",
+        watch-button: "立即观看",
+        roadmap-title: "路线图",
+        phase1: "第一阶段：网站上线，建立社区",
+        phase2: "第二阶段：NFT 系列发布",
+        phase3: "第三阶段：上线交易所，建立合作",
+        phase4: "第四阶段：全球营销活动，Okapium Inu 游戏发布",
+        about-title2: "关于 Okapium Inu",
+        about-full: "Okapium Inu 源于一个梦想——通过乐趣、创造力和创新将人们聚集在一起。我们的使命是建立一个每个声音都重要的社区，并在 meme 和区块链世界中留下深远影响。"
+      },
+      uk: {
+        welcome: "Ласкаво просимо до Okapium Inu",
+        intro: "Веселий криптопроєкт, натхненний духом Окапі.",
+        join: "Приєднатися до спільноти",
+        about-title: "Про проєкт",
+        about-text: "Okapium Inu — це яскрава, весела екосистема для криптоентузіастів. Приєднуйся до руху!",
+        watch-title: "Подивіться наш трейлер",
+        watch-button: "Дивитися зараз",
+        roadmap-title: "Дорожня карта",
+        phase1: "Етап 1: Запуск сайту, формування спільноти",
+        phase2: "Етап 2: Запуск NFT-колекції",
+        phase3: "Етап 3: Біржові лістинги, партнерства",
+        phase4: "Етап 4: Глобальна маркетингова кампанія, реліз гри Okapium Inu",
+        about-title2: "Про Okapium Inu",
+        about-full: "Okapium Inu виник з мрії об’єднати людей за допомогою веселощів, креативу та інновацій. Наша місія — створити яскраву спільноту, де кожен голос має значення, та залишити слід у світі мемів і блокчейну."
+      },
+      az: {
+        welcome: "Okapium Inu-ya Xoş Gəlmisiniz",
+        intro: "Okapi ruhundan ilham alan əyləncəli bir kripto layihəsi.",
+        join: "İcma ilə Qoşul",
+        about-title: "Layihə Haqqında",
+        about-text: "Okapium Inu, kripto sevərlər üçün canlı və əyləncəli bir ekosistemdir. Hərəkatın bir hissəsi olun!",
+        watch-title: "Treylerimizə Baxın",
+        watch-button: "İndi Baxın",
+        roadmap-title: "Yol Xəritəsi",
+        phase1: "Faza 1: Veb saytın açılışı, İcma qurulması",
+        phase2: "Faza 2: NFT kolleksiyasının təqdimatı",
+        phase3: "Faza 3: Borsa siyahıya alınması, Tərəfdaşlıqlar",
+        phase4: "Faza 4: Qlobal marketinq kampaniyası, Okapium Inu Oyununun Açıqlanması",
+        about-title2: "Okapium Inu Haqqında",
+        about-full: "Okapium Inu, insanları əyləncə, yaradıcılıq və innovasiya ilə bir araya gətirmək arzusu ilə yaranıb. Missiyamız hər kəsin səsinin eşidildiyi bir icma yaratmaq və meme-lər, blokçeyn sahəsində qalıcı təsir buraxmaqdır."
+      }
+    };
+
+    function translatePage(lang) {
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (translations[lang][key]) {
+          el.innerText = translations[lang][key];
+        }
+      });
+    }
+
+    document.getElementById("languageSelect").addEventListener("change", (e) => {
+      translatePage(e.target.value);
+    });
+
+    window.addEventListener("DOMContentLoaded", () => {
+      translatePage("en");
+    });
+  </script>
+</body>
+</html>
