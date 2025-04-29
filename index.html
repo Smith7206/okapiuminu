@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Okapium Inu</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="stars-background"></div>
+
+  <header>
+    <div class="language-selector">
+      <select id="languageSelect" onchange="changeLanguage()">
+        <option value="en">English</option>
+        <option value="tr">Türkçe</option>
+        <option value="ru">Русский</option>
+        <option value="zh">中文</option>
+        <option value="uk">Українська</option>
+        <option value="az">Azərbaycan</option>
+      </select>
+    </div>
+    <a href="#" class="community-link">Join the Community</a>
+  </header>
+
+  <main>
+    <img src="okapium-logo.png" alt="Okapium Inu Logo" class="logo" />
+
+    <h1 id="headline">Welcome to Okapium Inu</h1>
+    <p id="description">The most fun and community-driven token of the blockchain jungle.</p>
+
+    <a href="#" class="btn-3d" id="watchTrailer">Watch Our Trailer</a>
+  </main>
+
+  <footer>
+    <div class="socials">
+      <a href="#">Twitter</a>
+      <a href="#">Discord</a>
+      <a href="#">Telegram</a>
+    </div>
+    <p>© 2025 Okapium Inu. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const translations = {
+      tr: {
+        headline: "Okapium Inu'ya Hoş Geldiniz",
+        description: "Blockchain ormanının en eğlenceli ve topluluk odaklı tokeni.",
+        watchTrailer: "Fragmanı İzle"
+      },
+      ru: {
+        headline: "Добро пожаловать в Okapium Inu",
+        description: "Самый весёлый и ориентированный на сообщество токен блокчейна.",
+        watchTrailer: "Смотреть трейлер"
+      },
+      zh: {
+        headline: "欢迎来到 Okapium Inu",
+        description: "区块链丛林中最有趣、最具社区驱动的代币。",
+        watchTrailer: "观看预告片"
+      },
+      uk: {
+        headline: "Ласкаво просимо до Okapium Inu",
+        description: "Найвеселіший токен блокчейну, орієнтований на спільноту.",
+        watchTrailer: "Дивитися трейлер"
+      },
+      az: {
+        headline: "Okapium Inu-ya Xoş Gəlmisiniz",
+        description: "Blokçeyn cəngəlliyinin ən əyləncəli və icma yönümlü tokeni.",
+        watchTrailer: "Treyleri İzləyin"
+      },
+      en: {
+        headline: "Welcome to Okapium Inu",
+        description: "The most fun and community-driven token of the blockchain jungle.",
+        watchTrailer: "Watch Our Trailer"
+      }
+    };
+
+    function changeLanguage() {
+      const lang = document.getElementById("languageSelect").value;
+      document.getElementById("headline").innerText = translations[lang].headline;
+      document.getElementById("description").innerText = translations[lang].description;
+      document.getElementById("watchTrailer").innerText = translations[lang].watchTrailer;
+    }
+  </script>
+</body>
+</html>
