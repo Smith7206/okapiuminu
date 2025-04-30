@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Okapium Inu</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="logo.png">
+</head>
+<body>
+  <div id="stars"></div>
+  <div id="stars2"></div>
+  <div id="stars3"></div>
+
+  <header>
+    <img src="logo.png" alt="Okapium Inu Logo" class="logo" />
+    <h1 data-lang="title">Welcome to Okapium Inu</h1>
+    <div class="language-select">
+      <select id="languageSelector">
+        <option value="en">English</option>
+        <option value="tr">Türkçe</option>
+        <option value="ru">Русский</option>
+        <option value="zh">中文</option>
+        <option value="az">Azərbaycan</option>
+        <option value="uk">Українська</option>
+      </select>
+    </div>
+  </header>
+
+  <section class="section">
+    <h2 data-lang="tokenomics">Tokenomics</h2>
+    <ul>
+      <li>Total Supply: 1,000,000,000</li>
+      <li>Tax: 0%</li>
+      <li>Blockchain: Binance Smart Chain</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2 data-lang="nft">NFT Gallery</h2>
+    <div class="nft-gallery">
+      <img src="nft1.png" alt="NFT 1" />
+      <img src="nft2.png" alt="NFT 2" />
+      <img src="nft3.png" alt="NFT 3" />
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 data-lang="trailer">Watch Our Trailer</h2>
+    <div class="video-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+        title="YouTube video" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 data-lang="join">Join the Community</h2>
+    <form class="subscribe-form">
+      <input type="email" placeholder="Enter your email" required />
+      <button class="btn-3d" type="submit" data-lang="subscribe">Subscribe</button>
+    </form>
+  </section>
+
+  <footer>
+    <div class="social-icons">
+      <a href="#"><img src="twitter.png" alt="Twitter" /></a>
+      <a href="#"><img src="telegram.png" alt="Telegram" /></a>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        title: "Welcome to Okapium Inu",
+        tokenomics: "Tokenomics",
+        nft: "NFT Gallery",
+        trailer: "Watch Our Trailer",
+        join: "Join the Community",
+        subscribe: "Subscribe",
+      },
+      tr: {
+        title: "Okapium Inu'ya Hoş Geldiniz",
+        tokenomics: "Tokenomik",
+        nft: "NFT Galerisi",
+        trailer: "Fragmanımızı İzleyin",
+        join: "Topluluğa Katıl",
+        subscribe: "Abone Ol",
+      },
+      ru: {
+        title: "Добро пожаловать в Okapium Inu",
+        tokenomics: "Токеномика",
+        nft: "Галерея NFT",
+        trailer: "Смотрите наш трейлер",
+        join: "Присоединяйтесь к сообществу",
+        subscribe: "Подписаться",
+      },
+      zh: {
+        title: "欢迎来到 Okapium Inu",
+        tokenomics: "代币经济学",
+        nft: "NFT 画廊",
+        trailer: "观看我们的预告片",
+        join: "加入社区",
+        subscribe: "订阅",
+      },
+      az: {
+        title: "Okapium Inu-ya xoş gəlmisiniz",
+        tokenomics: "Tokenomika",
+        nft: "NFT Qalereyası",
+        trailer: "Treylerimizə baxın",
+        join: "İcma qoşulun",
+        subscribe: "Abunə ol",
+      },
+      uk: {
+        title: "Ласкаво просимо до Okapium Inu",
+        tokenomics: "Токеноміка",
+        nft: "Галерея NFT",
+        trailer: "Дивіться наш трейлер",
+        join: "Приєднуйтесь до спільноти",
+        subscribe: "Підписатися",
+      }
+    };
+
+    document.getElementById("languageSelector").addEventListener("change", function () {
+      const selectedLang = this.value;
+      const elements = document.querySelectorAll("[data-lang]");
+      elements.forEach((el) => {
+        const key = el.getAttribute("data-lang");
+        if (translations[selectedLang] && translations[selectedLang][key]) {
+          el.textContent = translations[selectedLang][key];
+        }
+      });
+    });
+  </script>
+</body>
+</html>
