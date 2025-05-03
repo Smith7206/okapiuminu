@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Okapium Inu</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="stars"></canvas>
+
+  <div class="language-selector">
+    <select id="language" onchange="changeLanguage()">
+      <option value="en">English</option>
+      <option value="tr">Türkçe</option>
+      <option value="ru">Русский</option>
+      <option value="zh">中文</option>
+      <option value="ua">Українська</option>
+    </select>
+  </div>
+
+  <div class="content">
+    <h1 id="title">Welcome to Okapium Inu</h1>
+    <p id="subtitle">The meme revolution has arrived.</p>
+    <button id="learnBtn" onclick="scrollToTokenomics()">Learn More</button>
+
+    <div class="tokenomics" id="tokenomics">
+      <h2 id="tokenTitle">Tokenomics</h2>
+      <p id="supply">Total Supply: 1,000,000,000 OKP</p>
+      <p id="tax">Tax: 2% on each transaction</p>
+      <p id="liquidity">Liquidity Locked: Yes</p>
+    </div>
+  </div>
+
+  <script>
+    function scrollToTokenomics() {
+      document.getElementById("tokenomics").scrollIntoView({ behavior: "smooth" });
+    }
+
+    function changeLanguage() {
+      const lang = document.getElementById("language").value;
+      const content = {
+        en: {
+          title: "Welcome to Okapium Inu",
+          subtitle: "The meme revolution has arrived.",
+          learnBtn: "Learn More",
+          tokenTitle: "Tokenomics",
+          supply: "Total Supply: 1,000,000,000 OKP",
+          tax: "Tax: 2% on each transaction",
+          liquidity: "Liquidity Locked: Yes"
+        },
+        tr: {
+          title: "Okapium Inu'ya Hoşgeldiniz",
+          subtitle: "Meme devrimi başladı.",
+          learnBtn: "Daha Fazla Bilgi",
+          tokenTitle: "Tokenomik",
+          supply: "Toplam Arz: 1.000.000.000 OKP",
+          tax: "Vergi: Her işlemde %2",
+          liquidity: "Likidite Kilitlendi: Evet"
+        },
+        ru: {
+          title: "Добро пожаловать в Okapium Inu",
+          subtitle: "Революция мемов началась.",
+          learnBtn: "Узнать больше",
+          tokenTitle: "Токеномика",
+          supply: "Общее предложение: 1,000,000,000 OKP",
+          tax: "Налог: 2% за каждую транзакцию",
+          liquidity: "Ликвидность заблокирована: Да"
+        },
+        zh: {
+          title: "欢迎来到 Okapium Inu",
+          subtitle: "迷因革命已经到来。",
+          learnBtn: "了解更多",
+          tokenTitle: "代币经济",
+          supply: "总供应量：1,000,000,000 OKP",
+          tax: "交易税：每笔交易 2%",
+          liquidity: "流动性锁定：是"
+        },
+        ua: {
+          title: "Ласкаво просимо до Okapium Inu",
+          subtitle: "Революція мемів розпочалася.",
+          learnBtn: "Дізнатися більше",
+          tokenTitle: "Токеноміка",
+          supply: "Загальна пропозиція: 1,000,000,000 OKP",
+          tax: "Податок: 2% за транзакцію",
+          liquidity: "Заблокована ліквідність: Так"
+        }
+      };
+
+      const selected = content[lang];
+      for (let id in selected) {
+        document.getElementById(id).innerText = selected[id];
+      }
+    }
+  </script>
+</body>
+</html>
