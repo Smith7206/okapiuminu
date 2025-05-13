@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Okapium Inu</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="stars"></div>
+  <div id="stars2"></div>
+  <div id="stars3"></div>
+
+  <header>
+    <img src="logo.png" alt="Okapium Inu Logo" class="logo" />
+    <select id="language-selector">
+      <option value="en">English</option>
+      <option value="tr">Türkçe</option>
+      <option value="ru">Русский</option>
+      <option value="zh">中文</option>
+      <option value="uk">Українська</option>
+    </select>
+  </header>
+
+  <main>
+    <h1 data-i18n="title">Welcome to Okapium Inu</h1>
+    <p data-i18n="subtitle">The future of meme coins is here!</p>
+    <a href="#" class="btn" data-i18n="watch">Watch Our Trailer</a>
+  </main>
+
+  <footer>
+    <p data-i18n="follow">Follow us:</p>
+    <div class="social-icons">
+      <a href="#"><img src="icon-twitter.png" alt="Twitter" /></a>
+      <a href="#"><img src="icon-telegram.png" alt="Telegram" /></a>
+      <a href="#"><img src="icon-discord.png" alt="Discord" /></a>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        title: "Welcome to Okapium Inu",
+        subtitle: "The future of meme coins is here!",
+        watch: "Watch Our Trailer",
+        follow: "Follow us:"
+      },
+      tr: {
+        title: "Okapium Inu'ya Hoş Geldiniz",
+        subtitle: "Meme coin'lerin geleceği burada!",
+        watch: "Fragmanımızı İzle",
+        follow: "Bizi Takip Edin:"
+      },
+      ru: {
+        title: "Добро пожаловать в Okapium Inu",
+        subtitle: "Будущее мем-монет здесь!",
+        watch: "Смотреть трейлер",
+        follow: "Подписывайтесь на нас:"
+      },
+      zh: {
+        title: "欢迎来到Okapium Inu",
+        subtitle: "迷因币的未来在这里！",
+        watch: "观看预告片",
+        follow: "关注我们："
+      },
+      uk: {
+        title: "Ласкаво просимо до Okapium Inu",
+        subtitle: "Майбутнє мем-койнів вже тут!",
+        watch: "Дивитися трейлер",
+        follow: "Слідкуйте за нами:"
+      }
+    };
+
+    const selector = document.getElementById("language-selector");
+    selector.addEventListener("change", (e) => {
+      const lang = e.target.value;
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        el.textContent = translations[lang][key];
+      });
+    });
+  </script>
+</body>
+</html>
